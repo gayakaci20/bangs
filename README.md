@@ -1,20 +1,48 @@
-# <svg width="150" height="75" viewBox="0 0 130 248" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle">
-  <defs>
-    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#FACC15" />
-      <stop offset="100%" stop-color="#F97316" />
-    </linearGradient>
-  </defs>
-  <path d="M63 180.5L104.5 139L32.5 97.4308C60.6178 69.313 104.5 25.4308 104.5 25.4308" stroke="url(#logoGradient)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="25" cy="223" r="25" fill="url(#logoGradient)"/>
-</svg>
-
-# Bangs! – Lightning-fast Search Shortcuts ⚡️
+# <img src="favicon.png" width="50" height="50" style="vertical-align:middle"> Bangs! – Lightning-fast Search Shortcuts ⚡️
 
 Bangs! is a modern, self-hostable search shortcut service inspired by DuckDuckGo's "!bangs".
 Type commands like `!g react`, `!y lo-fi mix` or `!m paris café` to jump straight to the right search engine – **instantly**.
 
+> **🌐 Live Demo**: [https://bangs-beta.vercel.app](https://bangs-beta.vercel.app)  
 > **Inspiration**: This project is heavily inspired by [unduck](https://github.com/t3dotgg/unduck) by Theo Browne
+
+---
+
+## 🌐 Configuration Navigateur - Tutoriel Complet
+
+### Chrome / Edge / Brave
+
+1. **Ouvrez les paramètres** : `chrome://settings/searchEngines` (ou `edge://settings/searchEngines`)
+2. **Cliquez sur "Ajouter"** dans la section "Moteurs de recherche"
+3. **Remplissez les champs** :
+   - **Nom** : `Bangs!`
+   - **Mot-clé** : `!` (ou `bang`)
+   - **URL** : `https://bangs-beta.vercel.app/search?q=%s`
+4. **Cliquez sur "Ajouter"**
+
+### Firefox
+
+1. **Clic droit** sur la barre d'adresse → **"Ajouter un mot-clé pour cette recherche"**
+2. Ou allez dans **Paramètres** → **Recherche** → **Raccourcis de recherche**
+3. **Ajoutez manuellement** :
+   - **Nom** : `Bangs!`
+   - **Mot-clé** : `!`
+   - **URL** : `https://bangs-beta.vercel.app/search?q=%s`
+
+### Safari
+
+1. **Safari** → **Préférences** → **Recherche**
+2. **Gérer les sites web** → **Ajouter**
+3. **URL** : `https://bangs-beta.vercel.app/search?q=%s`
+4. **Titre** : `Bangs!`
+
+### 🎯 Comment utiliser
+
+Une fois configuré, tapez dans votre barre d'adresse :
+- `! !g react hooks` → Recherche Google pour "react hooks"
+- `! !y lofi music` → Recherche YouTube pour "lofi music" 
+- `! !gh nextjs` → Recherche GitHub pour "nextjs"
+- `! !m restaurant paris` → Google Maps pour "restaurant paris"
 
 ---
 
@@ -40,11 +68,11 @@ Type commands like `!g react`, `!y lo-fi mix` or `!m paris café` to jump straig
 
 ---
 
-## 🚀 Quick Start
+## 🚀 Quick Start (Development)
 
 ```bash
 # 1. Clone
-git clone https://github.com/your-username/bangs.git
+git clone https://github.com/gayakaci20/bangs.git
 cd bangs
 
 # 2. Install dependencies
@@ -59,20 +87,6 @@ Build for production:
 ```bash
 npm run build && npm start
 ```
-
----
-
-## 🌐 Browser Integration
-
-Add a **custom search engine** (or keyword) in your browser settings pointing to:
-
-```
-https://your-domain.com/search?q=%s
-```
-
-Now type `!g something` in the address bar and hit **Enter** – you'll be teleported to Google's results for `something`.
-
-> Tip: Replace `your-domain.com` with `localhost:3000` during development.
 
 ---
 
@@ -107,4 +121,4 @@ src/
 2. Create a branch `feat/my-awesome-bang`
 3. Add / edit entries in `src/lib/bangs.ts`
 4. `pnpm test` & `npm run lint`
-5. Open a Pull Request 🚀# bangs
+5. Open a Pull Request 🚀
