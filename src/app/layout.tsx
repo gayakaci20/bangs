@@ -13,13 +13,9 @@ export const metadata: Metadata = {
   title: "Bangs!",
   description: "Recherche rapide avec des raccourcis - Bangs!",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
-    other: {
-      rel: "icon",
-      url: "/favicon.png",
-    },
+    icon: [
+      { url: '/favicon.ico', type: 'image/x-icon' },
+    ],
   },
 };
 
