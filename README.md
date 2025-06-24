@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # <img src="public/favicon.png" width="50" height="50" style="vertical-align:middle"> Bangs! – Lightning-fast Search Shortcuts ⚡️
+=======
+# <img src="public/favicon.png" width="35" height="35" style="vertical-align:middle"> Bangs! – Lightning-fast Search Shortcuts ⚡️
+>>>>>>> e3c64b999c36c9c498181c9d18e2fc853ae41daa
 
 Bangs! is a modern, self-hostable search shortcut service inspired by DuckDuckGo's "!bangs".
 Type commands like `!g react`, `!y lo-fi mix` or `!m paris café` to jump straight to the right search engine – **instantly**.
