@@ -1,4 +1,4 @@
-# <img src="favicon.png" width="50" height="50" style="vertical-align:middle"> Bangs! – Lightning-fast Search Shortcuts ⚡️
+# <img src="public/favicon.png" width="50" height="50" style="vertical-align:middle"> Bangs! – Lightning-fast Search Shortcuts ⚡️
 
 Bangs! is a modern, self-hostable search shortcut service inspired by DuckDuckGo's "!bangs".
 Type commands like `!g react`, `!y lo-fi mix` or `!m paris café` to jump straight to the right search engine – **instantly**.
@@ -8,41 +8,41 @@ Type commands like `!g react`, `!y lo-fi mix` or `!m paris café` to jump straig
 
 ---
 
-## 🌐 Configuration Navigateur - Tutoriel Complet
+## 🌐 Browser Setup - Complete Tutorial
 
 ### Chrome / Edge / Brave
 
-1. **Ouvrez les paramètres** : `chrome://settings/searchEngines` (ou `edge://settings/searchEngines`)
-2. **Cliquez sur "Ajouter"** dans la section "Moteurs de recherche"
-3. **Remplissez les champs** :
-   - **Nom** : `Bangs!`
-   - **Mot-clé** : `!` (ou `bang`)
-   - **URL** : `https://bangs-beta.vercel.app/search?q=%s`
-4. **Cliquez sur "Ajouter"**
+1. **Open settings**: `chrome://settings/searchEngines` (or `edge://settings/searchEngines`)
+2. **Click "Add"** in the "Search engines" section
+3. **Fill in the fields**:
+   - **Name**: `Bangs!`
+   - **Keyword**: `!` (or `bang`)
+   - **URL**: `https://bangs-beta.vercel.app/search?q=%s`
+4. **Click "Add"**
 
 ### Firefox
 
-1. **Clic droit** sur la barre d'adresse → **"Ajouter un mot-clé pour cette recherche"**
-2. Ou allez dans **Paramètres** → **Recherche** → **Raccourcis de recherche**
-3. **Ajoutez manuellement** :
-   - **Nom** : `Bangs!`
-   - **Mot-clé** : `!`
-   - **URL** : `https://bangs-beta.vercel.app/search?q=%s`
+1. **Right-click** on the address bar → **"Add a Keyword for this Search"**
+2. Or go to **Settings** → **Search** → **Search Shortcuts**
+3. **Add manually**:
+   - **Name**: `Bangs!`
+   - **Keyword**: `!`
+   - **URL**: `https://bangs-beta.vercel.app/search?q=%s`
 
 ### Safari
 
-1. **Safari** → **Préférences** → **Recherche**
-2. **Gérer les sites web** → **Ajouter**
-3. **URL** : `https://bangs-beta.vercel.app/search?q=%s`
-4. **Titre** : `Bangs!`
+1. **Safari** → **Preferences** → **Search**
+2. **Manage Websites** → **Add**
+3. **URL**: `https://bangs-beta.vercel.app/search?q=%s`
+4. **Title**: `Bangs!`
 
-### 🎯 Comment utiliser
+### 🎯 How to use
 
-Une fois configuré, tapez dans votre barre d'adresse :
-- `! !g react hooks` → Recherche Google pour "react hooks"
-- `! !y lofi music` → Recherche YouTube pour "lofi music" 
-- `! !gh nextjs` → Recherche GitHub pour "nextjs"
-- `! !m restaurant paris` → Google Maps pour "restaurant paris"
+Once configured, type in your address bar:
+- `! !g react hooks` → Google search for "react hooks"
+- `! !y lofi music` → YouTube search for "lofi music" 
+- `! !gh nextjs` → GitHub search for "nextjs"
+- `! !m restaurant paris` → Google Maps for "restaurant paris"
 
 ---
 
