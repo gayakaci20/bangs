@@ -1,36 +1,110 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# <svg width="150" height="75" viewBox="0 0 130 248" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle">
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FACC15" />
+      <stop offset="100%" stop-color="#F97316" />
+    </linearGradient>
+  </defs>
+  <path d="M63 180.5L104.5 139L32.5 97.4308C60.6178 69.313 104.5 25.4308 104.5 25.4308" stroke="url(#logoGradient)" stroke-width="50" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="25" cy="223" r="25" fill="url(#logoGradient)"/>
+</svg>
 
-## Getting Started
+# Bangs! – Lightning-fast Search Shortcuts ⚡️
 
-First, run the development server:
+Bangs! is a modern, self-hostable search shortcut service inspired by DuckDuckGo's "!bangs".
+Type commands like `!g react`, `!y lo-fi mix` or `!m paris café` to jump straight to the right search engine – **instantly**.
+
+> **Inspiration**: This project is heavily inspired by [unduck](https://github.com/t3dotgg/unduck) by Theo Browne
+
+---
+
+## ✨ Features
+
+- **Instant redirects** – No loading screens, everything happens client-side
+- **Customizable bangs** – Easily add, remove or tweak shortcuts in `src/lib/bangs.ts`
+- **Beautiful dark UI** – Tailwind CSS, HeroUI components & orange gradient branding
+- **Interactive glow & particles** – `tsParticles` sparkles and mouse-follow glow effects
+- **Minimal redirect page** – `/search` shows only a subtle sparkle animation while redirecting
+- **Fully typed** – Next.js 14 with TypeScript & App Router
+
+| Bang | Engine | Example |
+|------|--------|---------|
+| `!i` | Google Images | `!i Batman` |
+| `!y` | YouTube | `!y synthwave mix` |
+| `!w` | Wikipedia | `!w Alan Turing` |
+| `!gh` | GitHub code search | `!gh nextjs middleware` |
+| `!ghr` | GitHub repo | `!ghr vercel/next.js` |
+| `!m` | Google Maps | `!m coffee near me` |
+| `!d` | DuckDuckGo | `!d privacy` |
+| … | Add your own! | `src/lib/bangs.ts` |
+
+---
+
+## 🚀 Quick Start
 
 ```bash
+# 1. Clone
+git clone https://github.com/your-username/bangs.git
+cd bangs
+
+# 2. Install dependencies
+npm install
+
+# 3. Run in dev mode
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Build for production:
+```bash
+npm run build && npm start
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Browser Integration
 
-## Learn More
+Add a **custom search engine** (or keyword) in your browser settings pointing to:
 
-To learn more about Next.js, take a look at the following resources:
+```
+https://your-domain.com/search?q=%s
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Now type `!g something` in the address bar and hit **Enter** – you'll be teleported to Google's results for `something`.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+> Tip: Replace `your-domain.com` with `localhost:3000` during development.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🏗️ Tech Stack
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Next.js** (App Router)
+- **TypeScript**
+- **Tailwind CSS** & **HeroUI**
+- **Lucide React** icons
+- **tsParticles** (sparkles) + **Framer Motion**
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+  app/
+    page.tsx          → Showcase landing page
+    search/page.tsx   → Redirect handler
+  components/
+    ui/               → Glowing & particles effects
+  lib/
+    bangs.ts          → Bang definitions & redirect logic
+```
+
+---
+
+## 🤝 Contributing
+
+1. Fork this repo
+2. Create a branch `feat/my-awesome-bang`
+3. Add / edit entries in `src/lib/bangs.ts`
+4. `pnpm test` & `npm run lint`
+5. Open a Pull Request 🚀# bangs
