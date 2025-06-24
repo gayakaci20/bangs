@@ -132,7 +132,7 @@ function HomePage() {
                 speed={2}
               />
             </div>
-                         <svg className="w-12 h-12 relative z-10" viewBox="0 0 130 248" fill="none" xmlns="http://www.w3.org/2000/svg">
+                         <svg className="w-12 h-12 relative z-10" viewBox="0 0 130 248" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Bang icon">
                <defs>
                  <linearGradient id="bangGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                    <stop offset="0%" stopColor="#FACC15" />
@@ -209,21 +209,21 @@ function HomePage() {
             />
             <GridItem
               area="md:[grid-area:2/1/3/5]"
-              icon={<Globe className="h-5 w-5 text-gray-300 text-yellow-500" />}
+              icon={<Globe className="h-5 w-5 text-yellow-500" />}
               title={BANGS[2].s}
               description={BANGS[2].description}
               bang={BANGS[2].t}
             />
             <GridItem
               area="md:[grid-area:2/5/3/9]"
-              icon={<Github className="h-5 w-5 text-gray-300 text-white-500" />}
+              icon={<Github className="h-5 w-5 text-white" />}
               title={BANGS[3].s}
               description={BANGS[3].description}
               bang={BANGS[3].t}
             />
             <GridItem
               area="md:[grid-area:2/9/3/13]"
-              icon={<X className="h-5 w-5 text-white-500" />}
+              icon={<X className="h-5 w-5 text-white" />}
               title={BANGS[7].s}
               description={BANGS[7].description}
               bang={BANGS[7].t}
@@ -254,7 +254,7 @@ function HomePage() {
 
         {/* Examples */}
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-2xl font-semibold mb-6 text-white text-center">Exemples d'utilisation</h2>
+          <h2 className="text-2xl font-semibold mb-6 text-white text-center">Exemples d&apos;utilisation</h2>
           <div className="relative rounded-2xl border border-gray-800 p-2 md:rounded-3xl md:p-3">
             <GlowingEffect
               spread={40}
