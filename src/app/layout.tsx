@@ -6,7 +6,7 @@ import { Providers } from "./providers";
 const poppins = Poppins({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "700", "900", "500", "600", "800"],
+  weight: ["400", "700", "900"],
 });
 
 export const metadata: Metadata = {

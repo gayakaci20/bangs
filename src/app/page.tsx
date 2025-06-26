@@ -18,7 +18,6 @@ import {
   Globe,
   X,
   Image,
-  Plus,
   ChevronDown,
   ChevronUp,
 } from 'lucide-react';
@@ -276,7 +275,7 @@ function HomePage() {
         {/* URL Configuration */}
         <div className="mx-auto mb-12 max-w-2xl">
           <h2 className="mb-4 text-xl font-semibold text-center text-white">{t.configTitle}</h2>
-          <div className="relative p-2 rounded-2xl border-gray-800 bor der md:rounded-3xl md:p-3">
+          <div className="relative p-2 rounded-2xl border border-gray-800 md:rounded-3xl md:p-3">
             <GlowingEffect
               spread={40}
               glow={true}
@@ -459,9 +458,10 @@ function HomePage() {
         </div>
       </div>
       
-      <footer className="flex gap-2 justify-center items-center mt-8 mt-10 mb-10 text-sm text-center text-gray-400" onClick={() => window.open("https://github.com/gayakaci20", "_blank")} >
+      <footer className="flex gap-2 justify-center items-center mt-8 mt-10 mb-10 text-sm text-center text-gray-400" onClick={() => window.open("https://github.com/gayakaci20/bangs", "_blank")} >
         <Github 
-          className="text-gray-400 cursor-pointer hover:text-gray-300" 
+          className="text-gray-400 cursor-pointer hover:text-gray-300"
+          aria-label="GitHub repository"
         />
         <span className="text-gray-400 hover:text-gray-300">Open Source Project by Gaya KACI</span>
       </footer>
