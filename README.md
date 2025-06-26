@@ -1,4 +1,4 @@
-# <img src="public/favicon.png" width="35" height="35" style="vertical-align:middle"> Bangs! – Lightning-fast Search Shortcuts ⚡️
+# ![Project Icon](.github-icon.png) Bangs! – Lightning-fast Search Shortcuts ⚡️
 
 Bangs! is a Lightning-fast search shortcut service inspired by DuckDuckGo's "!bangs".
 Type commands like `!g react`, `!y lo-fi mix` or `!m paris café` to jump straight to the right search engine – **instantly**.
