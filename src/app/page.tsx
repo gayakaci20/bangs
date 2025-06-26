@@ -18,6 +18,9 @@ import {
   Globe,
   X,
   Image,
+  Plus,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 import { GlowingEffect } from '@/components/ui/glowing-effect';
 import { SparklesCore } from '@/components/ui/sparkles';
@@ -72,17 +75,17 @@ const GridItem = ({ area, icon, title, description, bang }: GridItemProps) => {
         <div className="flex overflow-hidden relative flex-col gap-6 justify-between p-6 h-full rounded-xl border border-gray-700 backdrop-blur-sm bg-gray-900/50">
           <div className="flex relative flex-col flex-1 gap-3 justify-between">
             <div className="space-y-2">
-              <div className="p-2 bg-gray-800 rounded-lg border border-gray-600 w-fit">
-                {icon}
+            <div className="p-2 bg-gray-800 rounded-lg border border-gray-600 w-fit">
+              {icon}
               </div>
               <Code className="px-2 py-1 mt-2 text-sm font-semibold text-gray-200 bg-gray-700 rounded-lg w-fit">
                 !{bang}
               </Code>
             </div>
             <div className="space-y-3">
-              <h3 className="font-sans text-lg font-semibold text-white">
-                {title}
-              </h3>
+                <h3 className="font-sans text-lg font-semibold text-white">
+                  {title}
+                </h3>
               <p className="font-sans text-sm text-gray-400">
                 {description}
               </p>
@@ -97,6 +100,7 @@ const GridItem = ({ area, icon, title, description, bang }: GridItemProps) => {
 function HomePage() {
   const [currentUrl, setCurrentUrl] = useState('');
   const [locale, setLocale] = useState<'fr' | 'en'>('fr');
+  const [showInstructions, setShowInstructions] = useState(false);
   const { setTheme } = useTheme();
 
   useEffect(() => {
@@ -115,6 +119,9 @@ function HomePage() {
       ? 'Recherche rapide avec des raccourcis ! Ajoutez cette URL comme moteur de recherche personnalisé dans votre navigateur.'
       : 'Quick search with shortcuts! Add this URL as a custom search engine in your browser.',
     configTitle: locale === 'fr' ? 'Configuration du navigateur' : 'Browser setup',
+    addSearchEngine: locale === 'fr' ? 'Ajouter comme moteur de recherche' : 'Add as search engine',
+    showInstructions: locale === 'fr' ? 'Voir les instructions' : 'Show instructions',
+    hideInstructions: locale === 'fr' ? 'Masquer les instructions' : 'Hide instructions',
     bangsTitle: locale === 'fr' ? 'Bangs disponibles' : 'Available bangs',
     examplesTitle: locale === 'fr' ? "Exemples d'utilisation" : 'Usage examples',
   } as const;
@@ -150,7 +157,73 @@ function HomePage() {
         { code: '!gh', desc: 'Go to GitHub.com' },
         { code: '!ghr user/repo', desc: 'Go to a specific GitHub repo' },
         { code: '!m restaurant paris', desc: 'Google Maps search' },
-      ];
+  ];
+
+  const instructions = locale === 'fr' ? {
+    chrome: {
+      title: 'Google Chrome / Edge',
+      steps: [
+        'Allez dans Paramètres → Moteur de recherche → Gérer les moteurs de recherche',
+        'Cliquez sur "Ajouter" à côté de "Moteurs de recherche du site"',
+        'Nom : "Bangs!"',
+        'Raccourci : "bangs" ou "b"',
+        `URL : ${currentUrl}`,
+        'Cliquez sur "Ajouter" puis définissez comme moteur par défaut si souhaité'
+      ]
+    },
+    firefox: {
+      title: 'Firefox',
+      steps: [
+        'Allez dans Paramètres → Recherche',
+        'Faites défiler vers "Raccourcis de recherche"',
+        'Cliquez sur "Ajouter un moteur de recherche"',
+        'Nom : "Bangs!"',
+        `URL : ${currentUrl}`,
+        'Définissez un mot-clé comme "bangs" ou "b"'
+      ]
+    },
+    safari: {
+      title: 'Safari',
+      steps: [
+        'Safari ne permet pas d\'ajouter facilement des moteurs personnalisés',
+        'Alternative : créez un signet avec ce script JavaScript :',
+        `javascript:location.href='${currentUrl.replace('%s', '')}'+encodeURIComponent(prompt('Recherche Bangs:'));`,
+        'Utilisez ce signet pour rechercher rapidement'
+      ]
+    }
+  } : {
+    chrome: {
+      title: 'Google Chrome / Edge',
+      steps: [
+        'Go to Settings → Search engine → Manage search engines',
+        'Click "Add" next to "Site search"',
+        'Name: "Bangs!"',
+        'Shortcut: "bangs" or "b"',
+        `URL: ${currentUrl}`,
+        'Click "Add" then set as default if desired'
+      ]
+    },
+    firefox: {
+      title: 'Firefox',
+      steps: [
+        'Go to Settings → Search',
+        'Scroll to "Search Shortcuts"',
+        'Click "Add search engine"',
+        'Name: "Bangs!"',
+        `URL: ${currentUrl}`,
+        'Set a keyword like "bangs" or "b"'
+      ]
+    },
+    safari: {
+      title: 'Safari',
+      steps: [
+        'Safari doesn\'t easily allow custom search engines',
+        'Alternative: create a bookmark with this JavaScript:',
+        `javascript:location.href='${currentUrl.replace('%s', '')}'+encodeURIComponent(prompt('Bangs Search:'));`,
+        'Use this bookmark for quick searches'
+      ]
+    }
+  };
 
   return (
     <div className="p-4 min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900">
@@ -203,7 +276,7 @@ function HomePage() {
         {/* URL Configuration */}
         <div className="mx-auto mb-12 max-w-2xl">
           <h2 className="mb-4 text-xl font-semibold text-center text-white">{t.configTitle}</h2>
-          <div className="relative p-2 rounded-2xl border border-gray-800 md:rounded-3xl md:p-3">
+          <div className="relative p-2 rounded-2xl border-gray-800 bor der md:rounded-3xl md:p-3">
             <GlowingEffect
               spread={40}
               glow={true}
@@ -226,6 +299,74 @@ function HomePage() {
               <CopyButton url={currentUrl} />
             </div>
           </div>
+          
+          {/* Add Search Engine Button */}
+          <div className="mt-6 w-full text-center">
+            <div className="inline-block relative p-2 rounded-2xl border border-gray-800 shadow-2xl">
+              <GlowingEffect
+                spread={40}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.01}
+              />
+              <Button
+                variant="flat"
+                color="primary"
+                startContent={<div className="w-4 h-4" />}
+                endContent={<div className="flex justify-center">{showInstructions ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}</div>}
+                onPress={() => setShowInstructions(!showInstructions)}
+                className="relative px-3 py-3 font-semibold text-black bg-gradient-to-r from-yellow-500 to-orange-500 rounded-lg border-2 shadow-lg transition-all duration-200 transform hover:shadow-2xl hover:scale-100 hover:-translate-y-1 active:scale-95 active:translate-y-0 border-yellow-400/30"
+              >
+                {t.addSearchEngine}
+              </Button>
+            </div>
+          </div>
+
+          {/* Instructions */}
+          {showInstructions && (
+            <div className="relative p-2 mt-6 rounded-2xl border border-gray-800 md:rounded-3xl md:p-3">
+              <GlowingEffect
+                spread={40}
+                glow={true}
+                disabled={false}
+                proximity={64}
+                inactiveZone={0.01}
+              />
+              <div className="relative p-6 rounded-xl border border-gray-700 backdrop-blur-sm bg-gray-900/50">
+                <div className="space-y-6">
+                  {Object.entries(instructions).map(([browser, config]) => (
+                    <div key={browser} className="space-y-3">
+                      <h3 className="flex gap-2 items-center text-lg font-semibold text-white">
+                        {config.title}
+                      </h3>
+                      <ol className="space-y-2 text-sm list-decimal list-inside text-gray-300">
+                        {config.steps.map((step, index) => (
+                          <li key={index} className="leading-relaxed">
+                            {step.startsWith('javascript:') ? (
+                              <Code className="block p-2 mt-1 text-xs break-all bg-gray-800 rounded">
+                                {step}
+                              </Code>
+                            ) : step.includes(currentUrl) ? (
+                              <>
+                                {step.split(currentUrl)[0]}
+                                <Code className="px-1 py-0.5 text-xs bg-gray-800 rounded">
+                                  {currentUrl}
+                                </Code>
+                                {step.split(currentUrl)[1]}
+                              </>
+                            ) : (
+                              step
+                            )}
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Bangs Grid avec effet de lueur */}

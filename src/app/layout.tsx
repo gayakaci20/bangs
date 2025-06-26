@@ -6,12 +6,12 @@ import { Providers } from "./providers";
 const poppins = Poppins({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["400", "700", "900"],
+  weight: ["400", "700", "900", "500", "600", "800"],
 });
 
 export const metadata: Metadata = {
-  title: "Bangs! - Lightning-fast Search Shortcuts",
-  description: "Modern, self-hostable search shortcut service inspired by DuckDuckGo's !bangs. Type commands like !g react, !y lofi mix to jump straight to the right search engine instantly.",
+  title: "Bangs!",
+  description: "Lightning-fast search shortcut service inspired by DuckDuckGo's !bangs. Type commands like !i cat, !y lofi mix to jump straight to the right search engine instantly.",
   keywords: ["bangs", "search shortcuts", "DuckDuckGo", "search engine", "productivity", "browser shortcuts"],
   authors: [{ name: "Gaya KACI", url: "https://github.com/gayakaci20" }],
   creator: "Gaya KACI",
@@ -32,11 +32,11 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://bangs-beta.vercel.app',
     title: 'Bangs! - Lightning-fast Search Shortcuts',
-    description: 'Modern, self-hostable search shortcut service inspired by DuckDuckGo\'s !bangs. Type commands like !g react, !y lofi mix to jump straight to the right search engine instantly.',
+    description: 'Lightning-fast search shortcut service inspired by DuckDuckGo\'s !bangs. Type commands like !i cat, !y lofi mix to jump straight to the right search engine instantly.',
     siteName: 'Bangs!',
     images: [
       {
-        url: '/bang.png',
+        url: '/favicon.png',
         width: 1200,
         height: 630,
         alt: 'Bangs! Preview Banner',
@@ -46,8 +46,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Bangs! - Lightning-fast Search Shortcuts',
-    description: 'Modern, self-hostable search shortcut service inspired by DuckDuckGo\'s !bangs.',
-    images: ['/bang.png'],
+    description: 'Lightning-fast search shortcut service inspired by DuckDuckGo\'s !bangs. Type commands like !i cat, !y lofi mix to jump straight to the right search engine instantly.',
+    images: ['/favicon.png'],
     creator: '@gayakaci20',
   },
   manifest: '/manifest.json',
