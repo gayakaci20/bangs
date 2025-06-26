@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
@@ -17,6 +17,7 @@ export const metadata: Metadata = {
   creator: "Gaya KACI",
   publisher: "Gaya KACI",
   robots: "index, follow",
+  metadataBase: new URL('https://bangs-beta.vercel.app'),
   icons: {
     icon: [
       { url: '/favicon.png', type: 'image/png', sizes: '32x32' },
@@ -35,10 +36,10 @@ export const metadata: Metadata = {
     siteName: 'Bangs!',
     images: [
       {
-        url: '/favicon.png',
-        width: 512,
-        height: 512,
-        alt: 'Bangs! Logo',
+        url: '/bang.png',
+        width: 1200,
+        height: 630,
+        alt: 'Bangs! Preview Banner',
       },
     ],
   },
@@ -46,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bangs! - Lightning-fast Search Shortcuts',
     description: 'Modern, self-hostable search shortcut service inspired by DuckDuckGo\'s !bangs.',
-    images: ['/favicon.png'],
+    images: ['/bang.png'],
     creator: '@gayakaci20',
   },
   manifest: '/manifest.json',
