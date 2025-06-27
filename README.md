@@ -39,7 +39,7 @@ Type commands like `!i cat`, `!y lo-fi mix` or `!m paris café` to jump straight
 ### 🎯 How to use
 
 Once configured, type in your address bar:
-- `! !g react hooks` → Google search for "react hooks"
+- `! !i cat` → Google search for "cat images"
 - `! !y lofi music` → YouTube search for "lofi music" 
 - `! !gh nextjs` → GitHub search for "nextjs"
 - `! !m restaurant paris` → Google Maps for "restaurant paris"
