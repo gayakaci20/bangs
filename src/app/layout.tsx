@@ -51,6 +51,12 @@ export const metadata: Metadata = {
     creator: '@gayakaci20',
   },
   manifest: '/manifest.json',
+  alternates: {
+    canonical: 'https://bangs-beta.vercel.app',
+  },
+  other: {
+    'github-repo': 'https://github.com/gayakaci20/bangs',
+  },
 };
 
 export default function RootLayout({
