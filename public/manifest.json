@@ -24,6 +24,12 @@
         "sizes": "512x512",
         "type": "image/png",
         "purpose": "any maskable"
+      },
+      {
+        "src": "/bangsbanner.png",
+        "sizes": "1280x640 1200x630",
+        "type": "image/png",
+        "purpose": "any maskable"
       }
     ]
   } 
