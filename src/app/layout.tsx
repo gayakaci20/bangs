@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: 'Bangs!',
     images: [
       {
-        url: '/favicon.png',
+        url: '/bangsbanner.png',
         width: 1200,
         height: 630,
         alt: 'Bangs! Preview Banner',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Bangs! - Lightning-fast Search Shortcuts',
     description: 'Lightning-fast search shortcut service inspired by DuckDuckGo\'s !bangs. Type commands like !i cat, !y lofi mix to jump straight to the right search engine instantly.',
-    images: ['/favicon.png'],
+    images: ['/bangsbanner.png'],
     creator: '@gayakaci20',
   },
   manifest: '/manifest.json',
