@@ -1,14 +1,14 @@
-# <img src="public/favicon.png" width="32" height="32" style="vertical-align:middle"> Bangs! – Lightning-fast Search Shortcuts ⚡️
+# <img src="public/favicon.png" width="32" height="32" style="vertical-align:middle"> Bangs! – Lightning-fast Search Shortcuts
 
 Bangs! is a Lightning-fast search shortcut service inspired by DuckDuckGo's "!bangs".
 Type commands like `!i cat`, `!y lo-fi mix` or `!m paris café` to jump straight to the right search engine – **instantly**.
 
-> **🌐 Live Demo**: [https://bangs-beta.vercel.app](https://bangs-beta.vercel.app)  
+> **Live Demo**: [https://bangs-beta.vercel.app](https://bangs-beta.vercel.app)  
 > **Inspiration**: This project is heavily inspired by [unduck](https://github.com/t3dotgg/unduck) by Theo Browne
 
 ---
 
-## 🌐 Browser Setup - Complete Tutorial
+## Browser Setup - Complete Tutorial
 
 ### Chrome / Edge / Brave
 
@@ -36,7 +36,7 @@ Type commands like `!i cat`, `!y lo-fi mix` or `!m paris café` to jump straight
 3. **URL**: `https://bangs-beta.vercel.app/search?q=%s`
 4. **Title**: `Bangs!`
 
-### 🎯 How to use
+### How to use
 
 Once configured, type in your address bar:
 - `! !i cat` → Google search for "cat images"
@@ -46,7 +46,7 @@ Once configured, type in your address bar:
 
 ---
 
-## ✨ Features
+## Features
 
 - **Instant redirects** – No loading screens, everything happens client-side
 - **Customizable bangs** – Easily add, remove or tweak shortcuts in `src/lib/bangs.ts`
@@ -68,7 +68,7 @@ Once configured, type in your address bar:
 
 ---
 
-## 🚀 Quick Start (Development)
+## Quick Start (Development)
 
 ```bash
 # 1. Clone
@@ -90,7 +90,7 @@ npm run build && npm start
 
 ---
 
-## 🏗️ Tech Stack
+## Tech Stack
 
 - **Next.js** (App Router)
 - **TypeScript**
@@ -100,7 +100,7 @@ npm run build && npm start
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 src/
@@ -115,10 +115,10 @@ src/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork this repo
 2. Create a branch `feat/my-awesome-bang`
 3. Add / edit entries in `src/lib/bangs.ts`
 4. `pnpm test` & `npm run lint`
-5. Open a Pull Request 🚀
+5. Open a Pull Request
